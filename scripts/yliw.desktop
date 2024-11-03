@@ -1,0 +1,8 @@
+[Desktop Entry]
+Name=Yliw
+Comment=Life Tracking
+Exec=yliw
+Icon=yliw
+Terminal=false
+Type=Application
+Categories=Network;

@@ -1,0 +1,7 @@
+#!/usr/bin/dh-exec
+
+data                        opt/yliw/
+lib                         opt/yliw/
+yliw          opt/yliw/
+yliw.png      usr/share/pixmaps/
+yliw.desktop  usr/share/applications/

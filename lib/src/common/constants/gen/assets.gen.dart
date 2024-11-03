@@ -16,15 +16,18 @@ class $AssetsImagesGen {
   AssetGenImage get waitButWhy =>
       const AssetGenImage('assets/images/wait_but_why.png');
 
+  /// File path: assets/images/yliw.ico
+  String get yliwIco => 'assets/images/yliw.ico';
+
   /// File path: assets/images/yliw.png
-  AssetGenImage get yliw => const AssetGenImage('assets/images/yliw.png');
+  AssetGenImage get yliwPng => const AssetGenImage('assets/images/yliw.png');
 
   /// File path: assets/images/yliw_no_bg.png
   AssetGenImage get yliwNoBg =>
       const AssetGenImage('assets/images/yliw_no_bg.png');
 
   /// List of all assets
-  List<AssetGenImage> get values => [waitButWhy, yliw, yliwNoBg];
+  List<dynamic> get values => [waitButWhy, yliwIco, yliwPng, yliwNoBg];
 }
 
 class Assets {

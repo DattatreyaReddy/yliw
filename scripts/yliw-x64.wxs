@@ -1,0 +1,75 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Wix xmlns="http://schemas.microsoft.com/wix/2006/wi">
+    <Product Id="*" UpgradeCode="$(var.UpgradeCode)" Version="$(var.Version)" Language="1033" Name="Yliw" Manufacturer="Padya">
+        <Package InstallerVersion="300" Compressed="yes" />
+        <Media Id="1" Cabinet="Yliw.cab" EmbedCab="yes" />
+
+        <Condition Message="This version of Windows does not support deploying 64-bit packages.">
+            VersionNT64
+        </Condition>
+
+        <!-- Directory -->
+        <Directory Id="TARGETDIR" Name="SourceDir">
+            <Directory Id="ProgramFiles64Folder">
+                <Directory Id="INSTALLDIR" Name="Yliw">
+                    <Directory Id="data" />
+                </Directory>
+            </Directory>
+            <Directory Id="ProgramMenuFolder">
+                <Directory Id="ProgramMenuDir" Name="Yliw">
+                    <Component Id="ProgramMenuDir" Guid="*">
+                        <RemoveFolder Id="ProgramMenuDir" On="uninstall" />
+                        <RegistryValue Root="HKCU" Key="Software\[Manufacturer]\[ProductName]" Type="string" Value="" KeyPath="yes" />
+                    </Component>
+                </Directory>
+            </Directory>
+            <Directory Id="DesktopFolder" />
+        </Directory>
+
+        <!-- Component -->
+        <DirectoryRef Id="INSTALLDIR">
+            <Component Id="yliw.exe" Guid="*" Win64="yes">
+                <File Id="yliw.exe" Source="yliw.exe" KeyPath="yes">
+                    <Shortcut Id="yliw_desktop.lnk" Name="Yliw" Directory="DesktopFolder" WorkingDirectory="INSTALLDIR" Icon="yliw.ico" IconIndex="0" Advertise="yes" />
+                    <Shortcut Id="yliw_program_menu.lnk" Name="Yliw" Directory="ProgramMenuDir" WorkingDirectory="INSTALLDIR" Icon="yliw.ico" IconIndex="0" Advertise="yes" Description="A free and open source Life tracker" />
+                </File>
+            </Component>
+
+            <Component Id="vcruntime140_1.dll" Guid="*" Win64="yes">
+                <File Id="vcruntime140_1.dll" Source="vcruntime140_1.dll" KeyPath="yes" />
+            </Component>
+            <Component Id="vcruntime140.dll" Guid="*" Win64="yes">
+                <File Id="vcruntime140.dll" Source="vcruntime140.dll" KeyPath="yes" />
+            </Component>
+            <Component Id="msvcp140.dll" Guid="*" Win64="yes">
+                <File Id="msvcp140.dll" Source="msvcp140.dll" KeyPath="yes" />
+            </Component>
+            <Component Id="flutter_windows.dll" Guid="*" Win64="yes">
+                <File Id="flutter_windows.dll" Source="flutter_windows.dll" KeyPath="yes" />
+            </Component>
+            <Component Id="url_launcher_windows_plugin.dll" Guid="*" Win64="yes">
+                <File Id="url_launcher_windows_plugin.dll" Source="url_launcher_windows_plugin.dll" KeyPath="yes" />
+            </Component>
+            <Component Id="permission_handler_windows_plugin.dll" Guid="*" Win64="yes">
+                <File Id="permission_handler_windows_plugin.dll" Source="permission_handler_windows_plugin.dll" KeyPath="yes" />
+            </Component>
+        </DirectoryRef>
+
+        <!-- Feature -->
+        <Feature Id="yliw" Title="Yliw" Level="1">
+            <ComponentGroupRef Id="data" />
+            <ComponentRef Id="yliw.exe" />
+            <ComponentRef Id="ProgramMenuDir" />
+            <ComponentRef Id="vcruntime140_1.dll" />
+            <ComponentRef Id="vcruntime140.dll" />
+            <ComponentRef Id="msvcp140.dll" />
+            <ComponentRef Id="flutter_windows.dll" />
+            <ComponentRef Id="url_launcher_windows_plugin.dll" />
+            <ComponentRef Id="permission_handler_windows_plugin.dll" />
+        </Feature>
+
+        <Icon Id="yliw.ico" SourceFile="$(var.Icon)" />
+        <!-- Icon in Add/Remove Programs -->
+        <Property Id="ARPPRODUCTICON" Value="yliw.ico" />
+    </Product>
+</Wix>
