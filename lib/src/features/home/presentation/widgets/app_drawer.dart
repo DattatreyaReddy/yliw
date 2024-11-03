@@ -68,7 +68,6 @@ class AppCredits extends ConsumerWidget {
       children: [
         ListTile(
           title: Text(context.l10n.yliwPost),
-          subtitle: Text(context.l10n.fromWaitButWhy),
           trailing: Icon(Icons.open_in_new),
           dense: true,
           onTap: () => AppUtils.launchUrlInWeb(
