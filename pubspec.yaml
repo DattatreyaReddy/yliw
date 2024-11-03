@@ -1,6 +1,6 @@
 name: yliw
 description: "A new Flutter project."
-publish_to: 'none'
+publish_to: "none"
 version: 0.1.0
 
 environment:
@@ -9,11 +9,53 @@ environment:
 dependencies:
   flutter:
     sdk: flutter
+  flutter_hooks: ^0.20.5
+  fluttertoast: ^8.2.8
+  gap: ^3.0.1
+  go_router: ^14.3.0
+  hooks_riverpod: ^2.6.1
+  path: ^1.9.0
+  path_provider: ^2.1.5
+  pub_semver: ^2.1.4
+  riverpod_annotation: ^2.6.1
+  url_launcher: ^6.3.1
+  tekartik_app_flutter_sembast:
+    git:
+      url: https://github.com/tekartik/app_flutter_utils.dart
+      ref: dart3a
+      path: app_sembast
+  package_info_plus: ^8.1.0
+  sembast: ^3.7.5
+  freezed_annotation: ^2.4.4
+  intl: ^0.19.0
+  flutter_localizations:
+    sdk: flutter
+  flutter_launcher_icons: ^0.14.1
+  json_annotation: ^4.9.0
+  scrollable_positioned_list: ^0.3.8
+  dropdown_button2: ^3.0.0-beta.19
+  font_awesome_flutter: ^10.7.0
+  http: ^1.2.2
 
 dev_dependencies:
   flutter_test:
     sdk: flutter
-  flutter_lints: ^4.0.0
+  flutter_lints: ^5.0.0
+  build_runner: ^2.4.13
+  go_router_builder: ^2.7.1
+  lints: ^5.0.0
+  riverpod_generator: ^2.6.2
+  custom_lint: ^0.7.0
+  riverpod_lint: ^2.6.2
+  freezed: ^2.2.1
+  flutter_gen_runner: ^5.8.0
+  json_serializable: ^6.8.0
 
 flutter:
   uses-material-design: true
+  generate: true
+  assets:
+    - assets/images/
+
+flutter_gen:
+  output: lib/src/common/constants/gen/

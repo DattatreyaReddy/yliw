@@ -1,0 +1,223 @@
+{
+  "@@locale": "en",
+  "@appCredits": {
+    "description": "Title for App credits popup"
+  },
+  "@appName": {
+    "description": "App Name"
+  },
+  "@boxStatusFailure": {
+    "description": "Text for Box status Failure"
+  },
+  "@boxStatusGoodEnjoyment": {
+    "description": "Text for Box status Good Enjoyment"
+  },
+  "@boxStatusGoodImprovement": {
+    "description": "Text for Box status Good Improvement"
+  },
+  "@boxStatusIdeal": {
+    "description": "Text for Box status Ideal"
+  },
+  "@boxStatusNotGreatEnjoyment": {
+    "description": "Text for Box status Not Great Enjoyment"
+  },
+  "@boxStatusNotGreatImprovement": {
+    "description": "Text for Box status Not Great Improvement"
+  },
+  "@boxStatusUnknown": {
+    "description": "Text for Box status Unknown"
+  },
+  "@checkOutYliWPost": {
+    "description": "Tip text for checking out Tour life in weeks post"
+  },
+  "@close": {
+    "description": "Text for close button"
+  },
+  "@copiedSuccess": {
+    "description": "Toast text for coping message successfully"
+  },
+  "@day": {
+    "description": "Title for day"
+  },
+  "@dayN": {
+    "description": "Title for Day box",
+    "placeholders": {
+      "number": {
+        "type": "String"
+      }
+    }
+  },
+  "@daySection": {
+    "description": "Section title for Day box",
+    "placeholders": {
+      "number": {
+        "type": "String"
+      }
+    }
+  },
+  "@deletedSuccessfully": {
+    "description": "Toast text to show after deleting messages",
+    "placeholders": {
+      "count": {
+        "format": "compact",
+        "type": "num"
+      }
+    }
+  },
+  "@enterDob": {
+    "description": "Text for Entering Date Of Birth button"
+  },
+  "@errorLaunchUrl": {
+    "description": "Toast to message to show when failed to open an url",
+    "placeholders": {
+      "url": {
+        "type": "String"
+      }
+    }
+  },
+  "@errorSomethingWentWrong": {
+    "description": "Error message to show something went wrong"
+  },
+  "@fromWaitButWhy": {
+    "description": "Text for 'from wait but why'"
+  },
+  "@gitHub": {
+    "description": "Name for github"
+  },
+  "@hbd": {
+    "description": "Banner Text (Small) for Happy Birthday"
+  },
+  "@highlight": {
+    "description": "Text for highlight option in check box"
+  },
+  "@highlightTip": {
+    "description": "Tip text for box Highlight"
+  },
+  "@nSelected": {
+    "description": "Text to show number of elements selected",
+    "placeholders": {
+      "number": {
+        "type": "String"
+      }
+    }
+  },
+  "@newUpdateAvailable": {
+    "description": "Popup title to show that the App/Server has and update"
+  },
+  "@noMessagesFound": {
+    "description": "Text for no messages found"
+  },
+  "@open": {
+    "description": "Text for Open button"
+  },
+  "@refresh": {
+    "description": "Text for refresh button"
+  },
+  "@settingUp": {
+    "description": "Text for Setting Up"
+  },
+  "@startMsgTip": {
+    "description": "Text for start messaging tip"
+  },
+  "@today": {
+    "description": "Today Text to show the creation date"
+  },
+  "@versionAvailable": {
+    "description": "Text to show that there is an update to App/Server",
+    "placeholders": {
+      "app": {
+        "example": "Server",
+        "type": "String"
+      },
+      "version": {
+        "example": "v0.4.2",
+        "type": "String"
+      }
+    }
+  },
+  "@week": {
+    "description": "Title for week"
+  },
+  "@weekN": {
+    "description": "Title for Week box",
+    "placeholders": {
+      "number": {
+        "type": "String"
+      }
+    }
+  },
+  "@weekSection": {
+    "description": "Section title for Week box",
+    "placeholders": {
+      "number": {
+        "type": "String"
+      }
+    }
+  },
+  "@year": {
+    "description": "Title for Year"
+  },
+  "@yearN": {
+    "description": "Title for Year box",
+    "placeholders": {
+      "number": {
+        "type": "String"
+      }
+    }
+  },
+  "@yearSection": {
+    "description": "Section title for Year box",
+    "placeholders": {
+      "number": {
+        "type": "String"
+      }
+    }
+  },
+  "@yesterday": {
+    "description": "Yesterday Text to show the creation date"
+  },
+  "@yliwPost": {
+    "description": "Text for open button to open Your life in weeks post"
+  },
+  "appCredits": "App Credits",
+  "appName": "YLIW",
+  "boxStatusFailure": "Failure",
+  "boxStatusGoodEnjoyment": "Good Enjoyment",
+  "boxStatusGoodImprovement": "Good Improvement",
+  "boxStatusIdeal": "Ideal",
+  "boxStatusNotGreatEnjoyment": "Not Great Enjoyment",
+  "boxStatusNotGreatImprovement": "Not Great Improvement",
+  "boxStatusUnknown": "Unknown",
+  "checkOutYliWPost": "Check out Your Life in Weeks post by Tim Urban from Wait But Why.",
+  "close": "close",
+  "copiedSuccess": "Message copied successfully",
+  "day": "Day",
+  "dayN": "Day - {number}",
+  "daySection": "W - {number}",
+  "deletedSuccessfully": "{count, plural, =0{No Messages found} =1{Message Deleted Successfully} other{Messages Deleted Successfully}}",
+  "enterDob": "Enter Date Of Birth",
+  "errorLaunchUrl": "Failed to open!\nCopying {url} to clipboard",
+  "errorSomethingWentWrong": "Something went wrong!",
+  "fromWaitButWhy": "from Wait But Why",
+  "gitHub": "Github",
+  "hbd": "HBD",
+  "highlight": "Highlight",
+  "highlightTip": "Tip: You can Highlight a box by tapping on Circle at top left corner",
+  "nSelected": "{number} Selected",
+  "newUpdateAvailable": "New update available",
+  "noMessagesFound": "No Messages Found",
+  "open": "Open",
+  "refresh": "Refresh",
+  "settingUp": "Setting Up...",
+  "startMsgTip": "Start Sending Messages to your self",
+  "today": "Today",
+  "versionAvailable": "Version {version} available for {app}!!",
+  "week": "Week",
+  "weekN": "Week - {number}",
+  "weekSection": "Year - {number}",
+  "year": "Year",
+  "yearN": "Year - {number}",
+  "yearSection": "D - {number}",
+  "yesterday": "Yesterday",
+  "yliwPost": "Your life in weeks post"
+}

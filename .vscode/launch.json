@@ -5,18 +5,18 @@
     "version": "0.2.0",
     "configurations": [
         {
-            "name": "hey",
+            "name": "yliw",
             "request": "launch",
             "type": "dart"
         },
         {
-            "name": "hey (profile mode)",
+            "name": "yliw (profile mode)",
             "request": "launch",
             "type": "dart",
             "flutterMode": "profile"
         },
         {
-            "name": "hey (release mode)",
+            "name": "yliw (release mode)",
             "request": "launch",
             "type": "dart",
             "flutterMode": "release"
