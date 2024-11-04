@@ -24,6 +24,7 @@ class AppDrawer extends StatelessWidget {
           ),
           Expanded(
             child: ListView(
+              padding: EdgeInsets.zero,
               children: [
                 ListTile(
                   leading: Icon(Icons.calendar_month_rounded),
@@ -120,7 +121,9 @@ class AppCredits extends ConsumerWidget {
             child: Row(
               mainAxisAlignment: MainAxisAlignment.center,
               children: [
-                Text("Made With ❤️ By "),
+                Text("Made With "),
+                Icon(Icons.favorite_rounded, color: Colors.red),
+                Text(" By "),
                 GestureDetector(
                   onTap: () => AppUtils.launchUrlInWeb(context,
                       Constants.padyaGithubUrl, ref.read(toastProvider)),

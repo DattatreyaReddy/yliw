@@ -54,6 +54,7 @@ class HomeScreen<T extends Box> extends HookWidget {
         return GestureDetector(
           onTap: () => context.hideKeyboard,
           child: ScrollablePositionedList.builder(
+            padding: EdgeInsets.only(bottom: 150),
             itemScrollController: itemScrollController,
             itemPositionsListener: itemPositionsListener,
             initialScrollIndex: currentSection,

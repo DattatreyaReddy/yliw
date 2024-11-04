@@ -36,6 +36,7 @@ class _DayBoxChatTitle extends ConsumerWidget {
   Widget build(context, ref) {
     return ListTile(
       contentPadding: EdgeInsets.zero,
+      horizontalTitleGap: 0,
       minLeadingWidth: 0,
       leading: HighlightCheckbox(
         box: box,
@@ -60,6 +61,7 @@ class _WeekBoxChatTitle extends ConsumerWidget {
     return ListTile(
       contentPadding: EdgeInsets.zero,
       minLeadingWidth: 0,
+      horizontalTitleGap: 0,
       leading: HighlightCheckbox(
         box: box,
         onChanged: (value) => ref
@@ -82,6 +84,7 @@ class _YearBoxChatTitle extends ConsumerWidget {
   Widget build(context, ref) {
     return ListTile(
       contentPadding: EdgeInsets.zero,
+      horizontalTitleGap: 0,
       minLeadingWidth: 0,
       leading: HighlightCheckbox(
         box: box,

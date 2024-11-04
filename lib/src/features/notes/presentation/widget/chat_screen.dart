@@ -1,6 +1,7 @@
 import 'package:flutter/material.dart';
 import 'package:flutter/services.dart';
 import 'package:flutter_hooks/flutter_hooks.dart';
+import 'package:gap/gap.dart';
 import 'package:hooks_riverpod/hooks_riverpod.dart';
 
 import '../../../../common/utils/extensions/custom_extensions.dart';
@@ -31,6 +32,7 @@ class ChatScreen extends HookConsumerWidget {
       appBar: selectedMsgSet.value.isBlank
           ? AppBar(
               title: BoxChatTitle(box: box),
+              titleSpacing: 0,
               actions: [
                 BoxStatusUpdateDropdown(
                   current: box.boxStatus,
@@ -85,22 +87,28 @@ class ChatScreen extends HookConsumerWidget {
             ),
       body: asyncMessageList.showUiWhenData(
         context,
-        (data) => ConversationView(
-          processedMessageList: data,
-          selectedMessages: selectedMsgSet.value,
-          onToggleSelection: (value) {
-            if (selectedMsgSet.value.contains(value)) {
-              selectedMsgSet.value = {...selectedMsgSet.value}..remove(value);
-            } else {
-              selectedMsgSet.value = {...selectedMsgSet.value, value};
-            }
-          },
+        (data) => Column(
+          children: [
+            Expanded(
+              child: ConversationView(
+                processedMessageList: data,
+                selectedMessages: selectedMsgSet.value,
+                onToggleSelection: (value) {
+                  if (selectedMsgSet.value.contains(value)) {
+                    selectedMsgSet.value = {...selectedMsgSet.value}
+                      ..remove(value);
+                  } else {
+                    selectedMsgSet.value = {...selectedMsgSet.value, value};
+                  }
+                },
+              ),
+            ),
+            SendTextField(
+              onSend: ref.read(messageRepositoryProvider(box.chatGroupId)).save,
+            ),
+            Gap(8),
+          ],
         ),
-      ),
-      bottomNavigationBar: SendTextField(
-        onSend: (value) {
-          ref.read(messageRepositoryProvider(box.chatGroupId)).save(value);
-        },
       ),
       resizeToAvoidBottomInset: true,
     );

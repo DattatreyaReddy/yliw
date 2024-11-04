@@ -119,6 +119,9 @@
   "@startMsgTip": {
     "description": "Text for start messaging tip"
   },
+  "@startTyping": {
+    "description": "Hint text for send message textfield"
+  },
   "@today": {
     "description": "Today Text to show the creation date"
   },
@@ -210,6 +213,7 @@
   "refresh": "Refresh",
   "settingUp": "Setting Up...",
   "startMsgTip": "Start Sending Messages to your self",
+  "startTyping": "Start Typing...",
   "today": "Today",
   "versionAvailable": "Version {version} available for {app}!!",
   "week": "Week",

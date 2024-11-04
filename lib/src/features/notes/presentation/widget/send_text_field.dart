@@ -36,6 +36,7 @@ class SendTextField extends HookConsumerWidget {
         onEditingComplete: sendMessage,
         onTapOutside: (_) => context.hideKeyboard,
         decoration: InputDecoration(
+          hintText: context.l10n.startTyping,
           border: const OutlineInputBorder(),
           suffixIcon: IconButton(
             onPressed: sendMessage,
