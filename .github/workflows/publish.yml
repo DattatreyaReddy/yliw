@@ -219,27 +219,27 @@ jobs:
         with:
           draft: false
           files: ${{ env.pkg_name }}*
-          token: ${{ secrets.WINGET }}
+          token: ${{ secrets.YLIW_RELEASE_KEY }}
 
-  winget-publish:
-    needs: create-build
-    runs-on: windows-latest # action can only be run on windows
-    steps:
-      - name: Update WINGET manifest
-        uses: vedantmgoyal2009/winget-releaser@v2
-        with:
-          identifier: padya.yliw
-          version: ${{ github.ref_name }}
-          token: ${{ secrets.WINGET }}
+  # winget-publish:
+  #   needs: create-build
+  #   runs-on: windows-latest # action can only be run on windows
+  #   steps:
+  #     - name: Update WINGET manifest
+  #       uses: vedantmgoyal2009/winget-releaser@v2
+  #       with:
+  #         identifier: padya.yliw
+  #         version: ${{ github.ref_name }}
+  #         token: ${{ secrets.YLIW_RELEASE_KEY }}
 
-  homebrew-cask-publish:
-    needs: create-build
-    runs-on: macos-latest
-    steps:
-      - name: Update Homebrew cask
-        uses: macauley/action-homebrew-bump-cask@v1
-        with:
-          token: ${{secrets.WINGET}}
-          tap: homebrew/homebrew-cask
-          cask: yliw
-          livecheck: true
+  # homebrew-cask-publish:
+  #   needs: create-build
+  #   runs-on: macos-latest
+  #   steps:
+  #     - name: Update Homebrew cask
+  #       uses: macauley/action-homebrew-bump-cask@v1
+  #       with:
+  #         token: ${{secrets.YLIW_RELEASE_KEY}}
+  #         tap: homebrew/homebrew-cask
+  #         cask: yliw
+  #         livecheck: true
