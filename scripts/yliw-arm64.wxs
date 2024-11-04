@@ -50,9 +50,6 @@
             <Component Id="url_launcher_windows_plugin.dll" Guid="*" Win64="yes">
                 <File Id="url_launcher_windows_plugin.dll" Source="url_launcher_windows_plugin.dll" KeyPath="yes" />
             </Component>
-            <Component Id="permission_handler_windows_plugin.dll" Guid="*" Win64="yes">
-                <File Id="permission_handler_windows_plugin.dll" Source="permission_handler_windows_plugin.dll" KeyPath="yes" />
-            </Component>
         </DirectoryRef>
 
         <!-- Feature -->
@@ -65,7 +62,6 @@
             <ComponentRef Id="msvcp140.dll" />
             <ComponentRef Id="flutter_windows.dll" />
             <ComponentRef Id="url_launcher_windows_plugin.dll" />
-            <ComponentRef Id="permission_handler_windows_plugin.dll" />
         </Feature>
 
         <Icon Id="yliw.ico" SourceFile="$(var.Icon)" />
