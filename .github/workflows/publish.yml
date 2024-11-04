@@ -59,7 +59,7 @@ jobs:
         uses: actions/setup-java@v4
         with:
           distribution: "zulu"
-          java-version: "21"
+          java-version: "17"
 
       # Enable desktop support
       - name: Enable desktop support
