@@ -1,7 +1,7 @@
 name: yliw
 description: "A new Flutter project."
 publish_to: "none"
-version: 0.1.1
+version: 0.1.2
 
 environment:
   sdk: ^3.5.4
@@ -62,10 +62,10 @@ flutter_gen:
   output: lib/src/common/constants/gen/
 
 flutter_native_splash:
-  color: "#54C5F8"
-  image: assets/images/yliw_no_bg.png
-  color_dark: "#01579B"
+  color: "#000000"
+  image: assets/images/yliw.png
+  color_dark: "#000000"
   android_12:
-    color: "#54C5F8"
-    icon_background_color: "#54C5F8"
-    image: assets/images/yliw_no_bg.png
+    color: "#000000"
+    icon_background_color: "#000000"
+    image: assets/images/yliw.png
