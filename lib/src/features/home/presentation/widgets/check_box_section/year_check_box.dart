@@ -24,6 +24,7 @@ class YearCheckBox extends ConsumerWidget {
   @override
   Widget build(context, ref) {
     return StatusCheckBox(
+      heroTag: yearBox.chatGroupId,
       status: yearBox.boxStatus,
       highlight: yearBox.boxNumber == current || yearBox.hasLandMark,
       isCurrent: yearBox.boxNumber == current,

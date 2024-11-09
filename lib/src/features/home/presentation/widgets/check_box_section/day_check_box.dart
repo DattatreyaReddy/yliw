@@ -25,6 +25,7 @@ class DayCheckBox extends ConsumerWidget {
   Widget build(context, ref) {
     return StatusCheckBox(
       status: dayBox.boxStatus,
+      heroTag: dayBox.chatGroupId,
       highlight: dayBox.hasLandMark,
       isCurrent: current == dayBox.boxNumber,
       isPast: dayBox.date.isBefore(DateTime.now()),

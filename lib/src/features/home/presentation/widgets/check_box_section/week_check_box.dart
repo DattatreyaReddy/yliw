@@ -24,6 +24,7 @@ class WeekCheckBox extends ConsumerWidget {
   @override
   Widget build(context, ref) {
     return StatusCheckBox(
+      heroTag: weekBox.chatGroupId,
       status: weekBox.boxStatus,
       highlight: current == weekBox.boxNumber || weekBox.hasLandMark,
       isCurrent: current == weekBox.boxNumber,

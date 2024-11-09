@@ -18,6 +18,7 @@ class StatusCheckBox extends StatelessWidget {
     this.highlight = false,
     this.isCurrent = false,
     this.isPast = false,
+    required this.heroTag,
     this.tooltip,
   });
   final BoxStatus status;
@@ -27,36 +28,43 @@ class StatusCheckBox extends StatelessWidget {
   final bool isCurrent;
   final bool isPast;
   final String? tooltip;
+  final String heroTag;
   @override
   Widget build(BuildContext context) {
-    return Tooltip(
-      message: tooltip ?? status.getLabel(context),
-      child: InkWell(
-        autofocus: isCurrent,
-        onTap: onTap,
-        onLongPress: onLongPress,
-        onDoubleTap: onLongPress,
-        onSecondaryTap: onLongPress,
-        child: SizedBox.square(
-          dimension: 24,
-          child: CustomPaint(
-            foregroundPainter: isCurrent
-                ? CurrentCheckBoxOuterPainter()
-                : highlight
-                    ? HighlightedCheckBoxOuterPainter()
-                    : isPast
-                        ? CheckBoxDisabledOuterPainter()
-                        : CheckBoxOuterPainter(),
-            painter: switch (status) {
-              BoxStatus.unknown => null,
-              BoxStatus.ideal => IdealCheckBoxPainter(),
-              BoxStatus.failure => FailureCheckBoxPainter(),
-              BoxStatus.goodEnjoyment => GoodEnjoymentCheckBoxPainter(),
-              BoxStatus.notGreatEnjoyment => NotGreatEnjoymentCheckBoxPainter(),
-              BoxStatus.goodImprovement => GoodImprovementCheckBoxPainter(),
-              BoxStatus.notGreatImprovement =>
-                NotGreatImprovementCheckBoxPainter(),
-            },
+    return Hero(
+      tag: heroTag,
+      child: Material(
+        child: Tooltip(
+          message: tooltip ?? status.getLabel(context),
+          child: InkWell(
+            autofocus: isCurrent,
+            onTap: onTap,
+            onLongPress: onLongPress,
+            onDoubleTap: onLongPress,
+            onSecondaryTap: onLongPress,
+            child: SizedBox.square(
+              dimension: 24,
+              child: CustomPaint(
+                foregroundPainter: isCurrent
+                    ? CurrentCheckBoxOuterPainter()
+                    : highlight
+                        ? HighlightedCheckBoxOuterPainter()
+                        : isPast
+                            ? CheckBoxDisabledOuterPainter()
+                            : CheckBoxOuterPainter(),
+                painter: switch (status) {
+                  BoxStatus.unknown => null,
+                  BoxStatus.ideal => IdealCheckBoxPainter(),
+                  BoxStatus.failure => FailureCheckBoxPainter(),
+                  BoxStatus.goodEnjoyment => GoodEnjoymentCheckBoxPainter(),
+                  BoxStatus.notGreatEnjoyment =>
+                    NotGreatEnjoymentCheckBoxPainter(),
+                  BoxStatus.goodImprovement => GoodImprovementCheckBoxPainter(),
+                  BoxStatus.notGreatImprovement =>
+                    NotGreatImprovementCheckBoxPainter(),
+                },
+              ),
+            ),
           ),
         ),
       ),

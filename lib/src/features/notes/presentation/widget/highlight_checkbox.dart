@@ -21,14 +21,17 @@ class HighlightCheckbox extends StatelessWidget {
 
   @override
   Widget build(BuildContext context) {
-    return Tooltip(
-      message: context.l10n.highlight,
-      child: Checkbox(
-        semanticLabel: context.l10n.highlight,
-        activeColor: Colors.amber,
-        shape: CircleBorder(),
-        value: box.hasLandMark,
-        onChanged: (val) => onChanged(val.ifNull()),
+    return Hero(
+      tag: box.chatGroupId,
+      child: Tooltip(
+        message: context.l10n.highlight,
+        child: Checkbox(
+          semanticLabel: context.l10n.highlight,
+          activeColor: Colors.amber,
+          shape: CircleBorder(),
+          value: box.hasLandMark,
+          onChanged: (val) => onChanged(val.ifNull()),
+        ),
       ),
     );
   }
