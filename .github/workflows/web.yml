@@ -16,5 +16,3 @@ jobs:
         with:
           channel: 'stable'
       - uses: bluefireteam/flutter-gh-pages@v7
-        with:
-          baseHref: /yliw/
