@@ -22,15 +22,15 @@ Stream<LinkedHashMap<int, List<DayBox>>?> dayBoxMap(Ref ref) =>
 
 @riverpod
 Stream<DayBox?> dayBox(Ref ref, int boxNumber) =>
-    ref.watch(dayBoxRepositoryProvider).getDayBoxByNumber(boxNumber);
+    ref.watch(dayBoxRepositoryProvider).watchById(boxNumber);
 
 @riverpod
 Stream<WeekBox?> weekBox(Ref ref, int boxNumber) =>
-    ref.watch(weekBoxRepositoryProvider).getWeekBoxByWeekNumber(boxNumber);
+    ref.watch(weekBoxRepositoryProvider).watchById(boxNumber);
 
 @riverpod
 Stream<YearBox?> yearBox(Ref ref, int boxNumber) =>
-    ref.watch(yearBoxRepositoryProvider).getYearBoxByYearNumber(boxNumber);
+    ref.watch(yearBoxRepositoryProvider).watchById(boxNumber);
 @riverpod
 Stream<LinkedHashMap<int, List<WeekBox>>?> weekBoxMap(Ref ref) =>
     ref.watch(weekBoxRepositoryProvider).getWeekBoxListGroupByYearNumber();

@@ -24,7 +24,7 @@ final dayBoxMapProvider =
 // ignore: unused_element
 typedef DayBoxMapRef
     = AutoDisposeStreamProviderRef<LinkedHashMap<int, List<DayBox>>?>;
-String _$dayBoxHash() => r'93c0afdb80f0edbcd0e80db7b44d7e8a63542083';
+String _$dayBoxHash() => r'a03491494ae70644dcbd41bc90a0a7bf7f93649d';
 
 /// Copied from Dart SDK
 class _SystemHash {
@@ -174,7 +174,7 @@ class _DayBoxProviderElement extends AutoDisposeStreamProviderElement<DayBox?>
   int get boxNumber => (origin as DayBoxProvider).boxNumber;
 }
 
-String _$weekBoxHash() => r'bdd4650ae543d1884cb4822458e75e1068b0d847';
+String _$weekBoxHash() => r'9f662058a54370445316112f75ddaa032e23aa65';
 
 /// See also [weekBox].
 @ProviderFor(weekBox)
@@ -303,7 +303,7 @@ class _WeekBoxProviderElement extends AutoDisposeStreamProviderElement<WeekBox?>
   int get boxNumber => (origin as WeekBoxProvider).boxNumber;
 }
 
-String _$yearBoxHash() => r'e9366888ff438839695fda33c12e4819427a821f';
+String _$yearBoxHash() => r'79e96e09ede8fb3ee11a5cd51b67c3dd782e9448';
 
 /// See also [yearBox].
 @ProviderFor(yearBox)

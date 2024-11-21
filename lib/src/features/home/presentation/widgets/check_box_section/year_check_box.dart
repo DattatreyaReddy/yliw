@@ -26,11 +26,11 @@ class YearCheckBox extends ConsumerWidget {
     return StatusCheckBox(
       heroTag: yearBox.chatGroupId,
       status: yearBox.boxStatus,
-      highlight: yearBox.boxNumber == current || yearBox.hasLandMark,
-      isCurrent: yearBox.boxNumber == current,
+      highlight: yearBox.id == current || yearBox.hasLandMark,
+      isCurrent: yearBox.id == current,
       isPast: yearBox.endDate.isBefore(DateTime.now()),
-      tooltip: (yearBox.boxNumber + 1).formatNumber(),
-      onTap: () => YearChatRoute(yearBox.boxNumber).go(context),
+      tooltip: (yearBox.id + 1).formatNumber(),
+      onTap: () => YearChatRoute(yearBox.id).go(context),
       onLongPress: () => ref
           .read(yearBoxRepositoryProvider)
           .save(yearBox.copyWith(boxStatus: yearBox.boxStatus.getNextState())),

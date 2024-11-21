@@ -72,8 +72,7 @@ class ChatScreen extends HookConsumerWidget {
                     StringBuffer message = StringBuffer();
                     for (var msgId in selectedMsgSet.value) {
                       String? newMsg = asyncMessageList.valueOrNull
-                          .firstWhereOrNull(
-                              (msg) => msgId == msg.message.recordId)
+                          .firstWhereOrNull((msg) => msgId == msg.message.id)
                           ?.message
                           .message;
                       if (newMsg.isNotBlank) {
@@ -110,7 +109,9 @@ class ChatScreen extends HookConsumerWidget {
               ),
             ),
             SendTextField(
-              onSend: ref.read(messageRepositoryProvider(box.chatGroupId)).save,
+              onSend: ref
+                  .read(messageRepositoryProvider(box.chatGroupId))
+                  .saveMessage,
             ),
             Gap(8),
           ],

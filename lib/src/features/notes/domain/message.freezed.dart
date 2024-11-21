@@ -20,7 +20,8 @@ Message _$MessageFromJson(Map<String, dynamic> json) {
 
 /// @nodoc
 mixin _$Message {
-  String get recordId => throw _privateConstructorUsedError;
+  @JsonKey(name: 'recordId')
+  String get id => throw _privateConstructorUsedError;
   String? get groupId => throw _privateConstructorUsedError;
   @EpochDateTimeConverter()
   DateTime get dateCreated => throw _privateConstructorUsedError;
@@ -43,7 +44,7 @@ abstract class $MessageCopyWith<$Res> {
       _$MessageCopyWithImpl<$Res, Message>;
   @useResult
   $Res call(
-      {String recordId,
+      {@JsonKey(name: 'recordId') String id,
       String? groupId,
       @EpochDateTimeConverter() DateTime dateCreated,
       @EpochDateTimeConverter() DateTime lastModified,
@@ -65,16 +66,16 @@ class _$MessageCopyWithImpl<$Res, $Val extends Message>
   @pragma('vm:prefer-inline')
   @override
   $Res call({
-    Object? recordId = null,
+    Object? id = null,
     Object? groupId = freezed,
     Object? dateCreated = null,
     Object? lastModified = null,
     Object? message = null,
   }) {
     return _then(_value.copyWith(
-      recordId: null == recordId
-          ? _value.recordId
-          : recordId // ignore: cast_nullable_to_non_nullable
+      id: null == id
+          ? _value.id
+          : id // ignore: cast_nullable_to_non_nullable
               as String,
       groupId: freezed == groupId
           ? _value.groupId
@@ -104,7 +105,7 @@ abstract class _$$MessageImplCopyWith<$Res> implements $MessageCopyWith<$Res> {
   @override
   @useResult
   $Res call(
-      {String recordId,
+      {@JsonKey(name: 'recordId') String id,
       String? groupId,
       @EpochDateTimeConverter() DateTime dateCreated,
       @EpochDateTimeConverter() DateTime lastModified,
@@ -124,16 +125,16 @@ class __$$MessageImplCopyWithImpl<$Res>
   @pragma('vm:prefer-inline')
   @override
   $Res call({
-    Object? recordId = null,
+    Object? id = null,
     Object? groupId = freezed,
     Object? dateCreated = null,
     Object? lastModified = null,
     Object? message = null,
   }) {
     return _then(_$MessageImpl(
-      recordId: null == recordId
-          ? _value.recordId
-          : recordId // ignore: cast_nullable_to_non_nullable
+      id: null == id
+          ? _value.id
+          : id // ignore: cast_nullable_to_non_nullable
               as String,
       groupId: freezed == groupId
           ? _value.groupId
@@ -159,7 +160,7 @@ class __$$MessageImplCopyWithImpl<$Res>
 @JsonSerializable()
 class _$MessageImpl implements _Message {
   _$MessageImpl(
-      {required this.recordId,
+      {@JsonKey(name: 'recordId') required this.id,
       required this.groupId,
       @EpochDateTimeConverter() required this.dateCreated,
       @EpochDateTimeConverter() required this.lastModified,
@@ -169,7 +170,8 @@ class _$MessageImpl implements _Message {
       _$$MessageImplFromJson(json);
 
   @override
-  final String recordId;
+  @JsonKey(name: 'recordId')
+  final String id;
   @override
   final String? groupId;
   @override
@@ -183,7 +185,7 @@ class _$MessageImpl implements _Message {
 
   @override
   String toString() {
-    return 'Message(recordId: $recordId, groupId: $groupId, dateCreated: $dateCreated, lastModified: $lastModified, message: $message)';
+    return 'Message(id: $id, groupId: $groupId, dateCreated: $dateCreated, lastModified: $lastModified, message: $message)';
   }
 
   @override
@@ -191,8 +193,7 @@ class _$MessageImpl implements _Message {
     return identical(this, other) ||
         (other.runtimeType == runtimeType &&
             other is _$MessageImpl &&
-            (identical(other.recordId, recordId) ||
-                other.recordId == recordId) &&
+            (identical(other.id, id) || other.id == id) &&
             (identical(other.groupId, groupId) || other.groupId == groupId) &&
             (identical(other.dateCreated, dateCreated) ||
                 other.dateCreated == dateCreated) &&
@@ -203,8 +204,8 @@ class _$MessageImpl implements _Message {
 
   @JsonKey(includeFromJson: false, includeToJson: false)
   @override
-  int get hashCode => Object.hash(
-      runtimeType, recordId, groupId, dateCreated, lastModified, message);
+  int get hashCode =>
+      Object.hash(runtimeType, id, groupId, dateCreated, lastModified, message);
 
   /// Create a copy of Message
   /// with the given fields replaced by the non-null parameter values.
@@ -224,7 +225,7 @@ class _$MessageImpl implements _Message {
 
 abstract class _Message implements Message {
   factory _Message(
-      {required final String recordId,
+      {@JsonKey(name: 'recordId') required final String id,
       required final String? groupId,
       @EpochDateTimeConverter() required final DateTime dateCreated,
       @EpochDateTimeConverter() required final DateTime lastModified,
@@ -233,7 +234,8 @@ abstract class _Message implements Message {
   factory _Message.fromJson(Map<String, dynamic> json) = _$MessageImpl.fromJson;
 
   @override
-  String get recordId;
+  @JsonKey(name: 'recordId')
+  String get id;
   @override
   String? get groupId;
   @override

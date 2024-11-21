@@ -61,10 +61,10 @@ class ConversationView extends HookConsumerWidget {
           child: MessageCard(
             processedMessage: processedMessageData,
             anySelected: selectedMessages.isNotBlank,
-            isSelected: selectedMessages
-                .contains(processedMessageData.message.recordId),
+            isSelected:
+                selectedMessages.contains(processedMessageData.message.id),
             onToggleSelection: () =>
-                onToggleSelection(processedMessageData.message.recordId),
+                onToggleSelection(processedMessageData.message.id),
           ),
           wrap: (child) => Column(
             mainAxisSize: MainAxisSize.min,

@@ -6,8 +6,13 @@
 
 import 'dart:async';
 
+import '../constants/enums/generic_entity.dart';
+
 typedef ConvertFunction<S, R> = R Function(S);
 
 typedef JsonObject = Map<String, Object?>;
 
 typedef AsyncConvertFunction<S, R> = FutureOr<R> Function(S event);
+
+typedef GenericFromJson<T extends GenericEntity> = T Function(
+    Map<String, dynamic>);

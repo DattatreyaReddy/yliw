@@ -8,7 +8,7 @@ part of 'message.dart';
 
 _$MessageImpl _$$MessageImplFromJson(Map<String, dynamic> json) =>
     _$MessageImpl(
-      recordId: json['recordId'] as String,
+      id: json['recordId'] as String,
       groupId: json['groupId'] as String?,
       dateCreated: const EpochDateTimeConverter()
           .fromJson((json['dateCreated'] as num).toInt()),
@@ -19,7 +19,7 @@ _$MessageImpl _$$MessageImplFromJson(Map<String, dynamic> json) =>
 
 Map<String, dynamic> _$$MessageImplToJson(_$MessageImpl instance) =>
     <String, dynamic>{
-      'recordId': instance.recordId,
+      'recordId': instance.id,
       'groupId': instance.groupId,
       'dateCreated':
           const EpochDateTimeConverter().toJson(instance.dateCreated),

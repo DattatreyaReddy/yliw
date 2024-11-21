@@ -20,7 +20,8 @@ DayBox _$DayBoxFromJson(Map<String, dynamic> json) {
 
 /// @nodoc
 mixin _$DayBox {
-  int get boxNumber => throw _privateConstructorUsedError;
+  @JsonKey(name: 'boxNumber')
+  int get id => throw _privateConstructorUsedError;
   @EpochDateTimeConverter()
   DateTime get date => throw _privateConstructorUsedError;
   BoxStatus get boxStatus => throw _privateConstructorUsedError;
@@ -43,7 +44,7 @@ abstract class $DayBoxCopyWith<$Res> {
       _$DayBoxCopyWithImpl<$Res, DayBox>;
   @useResult
   $Res call(
-      {int boxNumber,
+      {@JsonKey(name: 'boxNumber') int id,
       @EpochDateTimeConverter() DateTime date,
       BoxStatus boxStatus,
       int weekNumber,
@@ -66,7 +67,7 @@ class _$DayBoxCopyWithImpl<$Res, $Val extends DayBox>
   @pragma('vm:prefer-inline')
   @override
   $Res call({
-    Object? boxNumber = null,
+    Object? id = null,
     Object? date = null,
     Object? boxStatus = null,
     Object? weekNumber = null,
@@ -74,9 +75,9 @@ class _$DayBoxCopyWithImpl<$Res, $Val extends DayBox>
     Object? hasLandMark = null,
   }) {
     return _then(_value.copyWith(
-      boxNumber: null == boxNumber
-          ? _value.boxNumber
-          : boxNumber // ignore: cast_nullable_to_non_nullable
+      id: null == id
+          ? _value.id
+          : id // ignore: cast_nullable_to_non_nullable
               as int,
       date: null == date
           ? _value.date
@@ -110,7 +111,7 @@ abstract class _$$DayBoxImplCopyWith<$Res> implements $DayBoxCopyWith<$Res> {
   @override
   @useResult
   $Res call(
-      {int boxNumber,
+      {@JsonKey(name: 'boxNumber') int id,
       @EpochDateTimeConverter() DateTime date,
       BoxStatus boxStatus,
       int weekNumber,
@@ -131,7 +132,7 @@ class __$$DayBoxImplCopyWithImpl<$Res>
   @pragma('vm:prefer-inline')
   @override
   $Res call({
-    Object? boxNumber = null,
+    Object? id = null,
     Object? date = null,
     Object? boxStatus = null,
     Object? weekNumber = null,
@@ -139,9 +140,9 @@ class __$$DayBoxImplCopyWithImpl<$Res>
     Object? hasLandMark = null,
   }) {
     return _then(_$DayBoxImpl(
-      boxNumber: null == boxNumber
-          ? _value.boxNumber
-          : boxNumber // ignore: cast_nullable_to_non_nullable
+      id: null == id
+          ? _value.id
+          : id // ignore: cast_nullable_to_non_nullable
               as int,
       date: null == date
           ? _value.date
@@ -171,7 +172,7 @@ class __$$DayBoxImplCopyWithImpl<$Res>
 @JsonSerializable()
 class _$DayBoxImpl extends _DayBox {
   _$DayBoxImpl(
-      {required this.boxNumber,
+      {@JsonKey(name: 'boxNumber') required this.id,
       @EpochDateTimeConverter() required this.date,
       required this.boxStatus,
       required this.weekNumber,
@@ -183,7 +184,8 @@ class _$DayBoxImpl extends _DayBox {
       _$$DayBoxImplFromJson(json);
 
   @override
-  final int boxNumber;
+  @JsonKey(name: 'boxNumber')
+  final int id;
   @override
   @EpochDateTimeConverter()
   final DateTime date;
@@ -199,7 +201,7 @@ class _$DayBoxImpl extends _DayBox {
 
   @override
   String toString() {
-    return 'DayBox(boxNumber: $boxNumber, date: $date, boxStatus: $boxStatus, weekNumber: $weekNumber, yearNumber: $yearNumber, hasLandMark: $hasLandMark)';
+    return 'DayBox(id: $id, date: $date, boxStatus: $boxStatus, weekNumber: $weekNumber, yearNumber: $yearNumber, hasLandMark: $hasLandMark)';
   }
 
   @override
@@ -207,8 +209,7 @@ class _$DayBoxImpl extends _DayBox {
     return identical(this, other) ||
         (other.runtimeType == runtimeType &&
             other is _$DayBoxImpl &&
-            (identical(other.boxNumber, boxNumber) ||
-                other.boxNumber == boxNumber) &&
+            (identical(other.id, id) || other.id == id) &&
             (identical(other.date, date) || other.date == date) &&
             (identical(other.boxStatus, boxStatus) ||
                 other.boxStatus == boxStatus) &&
@@ -222,8 +223,8 @@ class _$DayBoxImpl extends _DayBox {
 
   @JsonKey(includeFromJson: false, includeToJson: false)
   @override
-  int get hashCode => Object.hash(runtimeType, boxNumber, date, boxStatus,
-      weekNumber, yearNumber, hasLandMark);
+  int get hashCode => Object.hash(
+      runtimeType, id, date, boxStatus, weekNumber, yearNumber, hasLandMark);
 
   /// Create a copy of DayBox
   /// with the given fields replaced by the non-null parameter values.
@@ -243,7 +244,7 @@ class _$DayBoxImpl extends _DayBox {
 
 abstract class _DayBox extends DayBox {
   factory _DayBox(
-      {required final int boxNumber,
+      {@JsonKey(name: 'boxNumber') required final int id,
       @EpochDateTimeConverter() required final DateTime date,
       required final BoxStatus boxStatus,
       required final int weekNumber,
@@ -254,7 +255,8 @@ abstract class _DayBox extends DayBox {
   factory _DayBox.fromJson(Map<String, dynamic> json) = _$DayBoxImpl.fromJson;
 
   @override
-  int get boxNumber;
+  @JsonKey(name: 'boxNumber')
+  int get id;
   @override
   @EpochDateTimeConverter()
   DateTime get date;
@@ -281,7 +283,8 @@ WeekBox _$WeekBoxFromJson(Map<String, dynamic> json) {
 
 /// @nodoc
 mixin _$WeekBox {
-  int get boxNumber => throw _privateConstructorUsedError;
+  @JsonKey(name: 'boxNumber')
+  int get id => throw _privateConstructorUsedError;
   @EpochDateTimeConverter()
   DateTime get startDate => throw _privateConstructorUsedError;
   @EpochDateTimeConverter()
@@ -305,7 +308,7 @@ abstract class $WeekBoxCopyWith<$Res> {
       _$WeekBoxCopyWithImpl<$Res, WeekBox>;
   @useResult
   $Res call(
-      {int boxNumber,
+      {@JsonKey(name: 'boxNumber') int id,
       @EpochDateTimeConverter() DateTime startDate,
       @EpochDateTimeConverter() DateTime endDate,
       BoxStatus boxStatus,
@@ -328,7 +331,7 @@ class _$WeekBoxCopyWithImpl<$Res, $Val extends WeekBox>
   @pragma('vm:prefer-inline')
   @override
   $Res call({
-    Object? boxNumber = null,
+    Object? id = null,
     Object? startDate = null,
     Object? endDate = null,
     Object? boxStatus = null,
@@ -336,9 +339,9 @@ class _$WeekBoxCopyWithImpl<$Res, $Val extends WeekBox>
     Object? hasLandMark = null,
   }) {
     return _then(_value.copyWith(
-      boxNumber: null == boxNumber
-          ? _value.boxNumber
-          : boxNumber // ignore: cast_nullable_to_non_nullable
+      id: null == id
+          ? _value.id
+          : id // ignore: cast_nullable_to_non_nullable
               as int,
       startDate: null == startDate
           ? _value.startDate
@@ -372,7 +375,7 @@ abstract class _$$WeekBoxImplCopyWith<$Res> implements $WeekBoxCopyWith<$Res> {
   @override
   @useResult
   $Res call(
-      {int boxNumber,
+      {@JsonKey(name: 'boxNumber') int id,
       @EpochDateTimeConverter() DateTime startDate,
       @EpochDateTimeConverter() DateTime endDate,
       BoxStatus boxStatus,
@@ -393,7 +396,7 @@ class __$$WeekBoxImplCopyWithImpl<$Res>
   @pragma('vm:prefer-inline')
   @override
   $Res call({
-    Object? boxNumber = null,
+    Object? id = null,
     Object? startDate = null,
     Object? endDate = null,
     Object? boxStatus = null,
@@ -401,9 +404,9 @@ class __$$WeekBoxImplCopyWithImpl<$Res>
     Object? hasLandMark = null,
   }) {
     return _then(_$WeekBoxImpl(
-      boxNumber: null == boxNumber
-          ? _value.boxNumber
-          : boxNumber // ignore: cast_nullable_to_non_nullable
+      id: null == id
+          ? _value.id
+          : id // ignore: cast_nullable_to_non_nullable
               as int,
       startDate: null == startDate
           ? _value.startDate
@@ -433,7 +436,7 @@ class __$$WeekBoxImplCopyWithImpl<$Res>
 @JsonSerializable()
 class _$WeekBoxImpl extends _WeekBox {
   _$WeekBoxImpl(
-      {required this.boxNumber,
+      {@JsonKey(name: 'boxNumber') required this.id,
       @EpochDateTimeConverter() required this.startDate,
       @EpochDateTimeConverter() required this.endDate,
       required this.boxStatus,
@@ -445,7 +448,8 @@ class _$WeekBoxImpl extends _WeekBox {
       _$$WeekBoxImplFromJson(json);
 
   @override
-  final int boxNumber;
+  @JsonKey(name: 'boxNumber')
+  final int id;
   @override
   @EpochDateTimeConverter()
   final DateTime startDate;
@@ -462,7 +466,7 @@ class _$WeekBoxImpl extends _WeekBox {
 
   @override
   String toString() {
-    return 'WeekBox(boxNumber: $boxNumber, startDate: $startDate, endDate: $endDate, boxStatus: $boxStatus, yearNumber: $yearNumber, hasLandMark: $hasLandMark)';
+    return 'WeekBox(id: $id, startDate: $startDate, endDate: $endDate, boxStatus: $boxStatus, yearNumber: $yearNumber, hasLandMark: $hasLandMark)';
   }
 
   @override
@@ -470,8 +474,7 @@ class _$WeekBoxImpl extends _WeekBox {
     return identical(this, other) ||
         (other.runtimeType == runtimeType &&
             other is _$WeekBoxImpl &&
-            (identical(other.boxNumber, boxNumber) ||
-                other.boxNumber == boxNumber) &&
+            (identical(other.id, id) || other.id == id) &&
             (identical(other.startDate, startDate) ||
                 other.startDate == startDate) &&
             (identical(other.endDate, endDate) || other.endDate == endDate) &&
@@ -485,8 +488,8 @@ class _$WeekBoxImpl extends _WeekBox {
 
   @JsonKey(includeFromJson: false, includeToJson: false)
   @override
-  int get hashCode => Object.hash(runtimeType, boxNumber, startDate, endDate,
-      boxStatus, yearNumber, hasLandMark);
+  int get hashCode => Object.hash(
+      runtimeType, id, startDate, endDate, boxStatus, yearNumber, hasLandMark);
 
   /// Create a copy of WeekBox
   /// with the given fields replaced by the non-null parameter values.
@@ -506,7 +509,7 @@ class _$WeekBoxImpl extends _WeekBox {
 
 abstract class _WeekBox extends WeekBox {
   factory _WeekBox(
-      {required final int boxNumber,
+      {@JsonKey(name: 'boxNumber') required final int id,
       @EpochDateTimeConverter() required final DateTime startDate,
       @EpochDateTimeConverter() required final DateTime endDate,
       required final BoxStatus boxStatus,
@@ -517,7 +520,8 @@ abstract class _WeekBox extends WeekBox {
   factory _WeekBox.fromJson(Map<String, dynamic> json) = _$WeekBoxImpl.fromJson;
 
   @override
-  int get boxNumber;
+  @JsonKey(name: 'boxNumber')
+  int get id;
   @override
   @EpochDateTimeConverter()
   DateTime get startDate;
@@ -545,7 +549,8 @@ YearBox _$YearBoxFromJson(Map<String, dynamic> json) {
 
 /// @nodoc
 mixin _$YearBox {
-  int get boxNumber => throw _privateConstructorUsedError;
+  @JsonKey(name: 'boxNumber')
+  int get id => throw _privateConstructorUsedError;
   @EpochDateTimeConverter()
   DateTime get startDate => throw _privateConstructorUsedError;
   @EpochDateTimeConverter()
@@ -568,7 +573,7 @@ abstract class $YearBoxCopyWith<$Res> {
       _$YearBoxCopyWithImpl<$Res, YearBox>;
   @useResult
   $Res call(
-      {int boxNumber,
+      {@JsonKey(name: 'boxNumber') int id,
       @EpochDateTimeConverter() DateTime startDate,
       @EpochDateTimeConverter() DateTime endDate,
       BoxStatus boxStatus,
@@ -590,16 +595,16 @@ class _$YearBoxCopyWithImpl<$Res, $Val extends YearBox>
   @pragma('vm:prefer-inline')
   @override
   $Res call({
-    Object? boxNumber = null,
+    Object? id = null,
     Object? startDate = null,
     Object? endDate = null,
     Object? boxStatus = null,
     Object? hasLandMark = null,
   }) {
     return _then(_value.copyWith(
-      boxNumber: null == boxNumber
-          ? _value.boxNumber
-          : boxNumber // ignore: cast_nullable_to_non_nullable
+      id: null == id
+          ? _value.id
+          : id // ignore: cast_nullable_to_non_nullable
               as int,
       startDate: null == startDate
           ? _value.startDate
@@ -629,7 +634,7 @@ abstract class _$$YearBoxImplCopyWith<$Res> implements $YearBoxCopyWith<$Res> {
   @override
   @useResult
   $Res call(
-      {int boxNumber,
+      {@JsonKey(name: 'boxNumber') int id,
       @EpochDateTimeConverter() DateTime startDate,
       @EpochDateTimeConverter() DateTime endDate,
       BoxStatus boxStatus,
@@ -649,16 +654,16 @@ class __$$YearBoxImplCopyWithImpl<$Res>
   @pragma('vm:prefer-inline')
   @override
   $Res call({
-    Object? boxNumber = null,
+    Object? id = null,
     Object? startDate = null,
     Object? endDate = null,
     Object? boxStatus = null,
     Object? hasLandMark = null,
   }) {
     return _then(_$YearBoxImpl(
-      boxNumber: null == boxNumber
-          ? _value.boxNumber
-          : boxNumber // ignore: cast_nullable_to_non_nullable
+      id: null == id
+          ? _value.id
+          : id // ignore: cast_nullable_to_non_nullable
               as int,
       startDate: null == startDate
           ? _value.startDate
@@ -684,7 +689,7 @@ class __$$YearBoxImplCopyWithImpl<$Res>
 @JsonSerializable()
 class _$YearBoxImpl extends _YearBox {
   _$YearBoxImpl(
-      {required this.boxNumber,
+      {@JsonKey(name: 'boxNumber') required this.id,
       @EpochDateTimeConverter() required this.startDate,
       @EpochDateTimeConverter() required this.endDate,
       required this.boxStatus,
@@ -695,7 +700,8 @@ class _$YearBoxImpl extends _YearBox {
       _$$YearBoxImplFromJson(json);
 
   @override
-  final int boxNumber;
+  @JsonKey(name: 'boxNumber')
+  final int id;
   @override
   @EpochDateTimeConverter()
   final DateTime startDate;
@@ -710,7 +716,7 @@ class _$YearBoxImpl extends _YearBox {
 
   @override
   String toString() {
-    return 'YearBox(boxNumber: $boxNumber, startDate: $startDate, endDate: $endDate, boxStatus: $boxStatus, hasLandMark: $hasLandMark)';
+    return 'YearBox(id: $id, startDate: $startDate, endDate: $endDate, boxStatus: $boxStatus, hasLandMark: $hasLandMark)';
   }
 
   @override
@@ -718,8 +724,7 @@ class _$YearBoxImpl extends _YearBox {
     return identical(this, other) ||
         (other.runtimeType == runtimeType &&
             other is _$YearBoxImpl &&
-            (identical(other.boxNumber, boxNumber) ||
-                other.boxNumber == boxNumber) &&
+            (identical(other.id, id) || other.id == id) &&
             (identical(other.startDate, startDate) ||
                 other.startDate == startDate) &&
             (identical(other.endDate, endDate) || other.endDate == endDate) &&
@@ -731,8 +736,8 @@ class _$YearBoxImpl extends _YearBox {
 
   @JsonKey(includeFromJson: false, includeToJson: false)
   @override
-  int get hashCode => Object.hash(
-      runtimeType, boxNumber, startDate, endDate, boxStatus, hasLandMark);
+  int get hashCode =>
+      Object.hash(runtimeType, id, startDate, endDate, boxStatus, hasLandMark);
 
   /// Create a copy of YearBox
   /// with the given fields replaced by the non-null parameter values.
@@ -752,7 +757,7 @@ class _$YearBoxImpl extends _YearBox {
 
 abstract class _YearBox extends YearBox {
   factory _YearBox(
-      {required final int boxNumber,
+      {@JsonKey(name: 'boxNumber') required final int id,
       @EpochDateTimeConverter() required final DateTime startDate,
       @EpochDateTimeConverter() required final DateTime endDate,
       required final BoxStatus boxStatus,
@@ -762,7 +767,8 @@ abstract class _YearBox extends YearBox {
   factory _YearBox.fromJson(Map<String, dynamic> json) = _$YearBoxImpl.fromJson;
 
   @override
-  int get boxNumber;
+  @JsonKey(name: 'boxNumber')
+  int get id;
   @override
   @EpochDateTimeConverter()
   DateTime get startDate;

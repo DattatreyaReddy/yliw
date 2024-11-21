@@ -27,10 +27,10 @@ class DayCheckBox extends ConsumerWidget {
       status: dayBox.boxStatus,
       heroTag: dayBox.chatGroupId,
       highlight: dayBox.hasLandMark,
-      isCurrent: current == dayBox.boxNumber,
+      isCurrent: current == dayBox.id,
       isPast: dayBox.date.isBefore(DateTime.now()),
-      tooltip: (dayBox.boxNumber + 1).formatNumber(),
-      onTap: () => DayChatRoute(dayBox.boxNumber).go(context),
+      tooltip: (dayBox.id + 1).formatNumber(),
+      onTap: () => DayChatRoute(dayBox.id).go(context),
       onLongPress: () => ref
           .read(dayBoxRepositoryProvider)
           .save(dayBox.copyWith(boxStatus: dayBox.boxStatus.getNextState())),

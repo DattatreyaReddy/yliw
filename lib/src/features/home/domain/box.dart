@@ -7,9 +7,9 @@
 import 'package:flutter/material.dart';
 import 'package:freezed_annotation/freezed_annotation.dart';
 
+import '../../../common/constants/enums/generic_entity.dart';
 import '../../../common/utils/converter/epoch_date_time_converter.dart';
 import '../../../common/utils/extensions/custom_extensions.dart';
-import '../../../common/utils/json_abstract.dart';
 import '../enums/box_status.dart';
 
 part 'box.freezed.dart';
@@ -42,7 +42,7 @@ enum YearBoxFields {
 }
 
 sealed class Box {
-  int get boxNumber;
+  int get id;
   BoxStatus get boxStatus;
   bool get hasLandMark;
   String get chatGroupId;
@@ -51,10 +51,10 @@ sealed class Box {
 }
 
 @freezed
-class DayBox with _$DayBox implements JsonAbstract, Box {
+class DayBox with _$DayBox implements GenericEntity<int>, Box {
   const DayBox._();
   factory DayBox({
-    required int boxNumber,
+    @JsonKey(name: 'boxNumber') required int id,
     @EpochDateTimeConverter() required DateTime date,
     required BoxStatus boxStatus,
     required int weekNumber,
@@ -70,14 +70,14 @@ class DayBox with _$DayBox implements JsonAbstract, Box {
 
   /// For Chat group name
   @override
-  String get chatGroupId => "DAY_$boxNumber";
+  String get chatGroupId => "DAY_$id";
 }
 
 @freezed
-class WeekBox with _$WeekBox implements JsonAbstract, Box {
+class WeekBox with _$WeekBox implements GenericEntity<int>, Box {
   const WeekBox._();
   factory WeekBox({
-    required int boxNumber,
+    @JsonKey(name: 'boxNumber') required int id,
     @EpochDateTimeConverter() required DateTime startDate,
     @EpochDateTimeConverter() required DateTime endDate,
     required BoxStatus boxStatus,
@@ -93,15 +93,15 @@ class WeekBox with _$WeekBox implements JsonAbstract, Box {
 
   /// For Chat group name
   @override
-  String get chatGroupId => "WEEK_$boxNumber";
+  String get chatGroupId => "WEEK_$id";
 }
 
 @freezed
-class YearBox with _$YearBox implements JsonAbstract, Box {
+class YearBox with _$YearBox implements GenericEntity<int>, Box {
   const YearBox._();
 
   factory YearBox({
-    required int boxNumber,
+    @JsonKey(name: 'boxNumber') required int id,
     @EpochDateTimeConverter() required DateTime startDate,
     @EpochDateTimeConverter() required DateTime endDate,
     required BoxStatus boxStatus,
@@ -116,5 +116,5 @@ class YearBox with _$YearBox implements JsonAbstract, Box {
 
   /// For Chat group name
   @override
-  String get chatGroupId => "YEAR_$boxNumber";
+  String get chatGroupId => "YEAR_$id";
 }

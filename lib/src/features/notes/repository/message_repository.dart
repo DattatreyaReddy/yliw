@@ -10,40 +10,37 @@ import 'package:sembast/sembast.dart';
 
 import '../../../common/controller/global_controller.dart';
 import '../../../common/utils/app_utils.dart';
-import '../../../common/utils/custom_types.dart';
+import '../../../common/utils/repository/generic_repository.dart';
 import '../domain/message.dart';
 
 part 'message_repository.g.dart';
 
-class DayBoxRepository {
-  final Database _db;
+class DayBoxRepository extends GenericRepository<String, Message> {
   final String groupId;
-  late final StoreRef<String, JsonObject> _store;
 
-  DayBoxRepository(this._db, this.groupId) {
-    _store = StoreRef(groupId);
-  }
+  DayBoxRepository(Database db, this.groupId)
+      : super(db, groupId, Message.fromJson);
 
-  Future<void> save(String text) async {
-    String recordId = await _store.generateKey(_db);
-    DateTime now = DateTime.now();
-    Message message = Message(
-      recordId: recordId,
-      groupId: groupId,
-      dateCreated: now,
-      lastModified: now,
-      message: text,
-    );
-    await _store.record(recordId).add(_db, message.toJson());
-  }
+  Future<void> saveMessage(String text) => database.transaction((txn) async {
+        String recordId = await store.generateKey(txn);
+        DateTime now = DateTime.now();
+        Message message = Message(
+          id: recordId,
+          groupId: groupId,
+          dateCreated: now,
+          lastModified: now,
+          message: text,
+        );
+        await save(message, txn);
+      });
 
-  Stream<List<Message>?> getMessageList() => _store
+  Stream<List<Message>?> getMessageList() => store
       .query(finder: Finder(sortOrders: [SortOrder(Field.key, false)]))
-      .onSnapshots(_db)
+      .onSnapshots(database)
       .map(AppUtils.convertSnaps(Message.fromJson));
 
   Future<void> deleteAll(Set<String> recordIds) =>
-      _store.records(recordIds).delete(_db);
+      store.records(recordIds).delete(database);
 }
 
 @riverpod

@@ -91,6 +91,10 @@ abstract class AppUtils {
           (List<RecordSnapshot<T, Map<String, Object?>>> event) =>
               event.map(convertSnapNonNull(constructor)).toList();
 
+  static T? Function(JsonObject? value) convertGet<T>(
+          T Function(JsonObject) fromJson) =>
+      (value) => value != null ? fromJson(value) : null;
+
   static int currentDay(AsyncValue<DateTime?> dob) {
     if (dob.valueOrNull == null) return 0;
     return DateTime.now().difference(dob.valueOrNull!).inDays;

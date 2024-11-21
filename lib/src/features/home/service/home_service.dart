@@ -22,23 +22,28 @@ part 'home_service.g.dart';
 
 class HomeService {
   final Database db;
-  late final SetupRepository setupRepository;
-  late final DayBoxRepository dayBoxRepository;
-  late final WeekBoxRepository weekBoxRepository;
-  late final YearBoxRepository yearBoxRepository;
-  HomeService(Ref ref, this.db) {
-    dayBoxRepository = ref.read(dayBoxRepositoryProvider);
-    weekBoxRepository = ref.read(weekBoxRepositoryProvider);
-    yearBoxRepository = ref.read(yearBoxRepositoryProvider);
-    setupRepository = ref.read(setupRepositoryProvider);
-  }
+  final SetupRepository setupRepository;
+  final DayBoxRepository dayBoxRepository;
+  final WeekBoxRepository weekBoxRepository;
+  final YearBoxRepository yearBoxRepository;
+
+  const HomeService({
+    required this.db,
+    required this.setupRepository,
+    required this.dayBoxRepository,
+    required this.weekBoxRepository,
+    required this.yearBoxRepository,
+  });
+
   Future<void> initialSetup(DateTime dob) async {
     final boxList = await compute(_getBoxesFromDateTime, dob);
     await db.transaction((tnx) async {
-      await yearBoxRepository.saveInTransaction(tnx, boxList.years);
-      await weekBoxRepository.saveInTransaction(tnx, boxList.weeks);
-      await dayBoxRepository.saveInTransaction(tnx, boxList.days);
-      await setupRepository.saveDateOfBirthInTransaction(tnx, dob);
+      await Future.wait([
+        yearBoxRepository.saveAll(boxList.years, tnx),
+        weekBoxRepository.saveAll(boxList.weeks, tnx),
+        dayBoxRepository.saveAll(boxList.days, tnx),
+        setupRepository.saveDateOfBirthInTransaction(tnx, dob),
+      ]);
     });
   }
 
@@ -49,7 +54,7 @@ class HomeService {
     List<DayBox> dayBoxList = [];
     for (int year = 0; year < Constants.lifeInYears; year++) {
       yearBoxList.add(YearBox(
-        boxNumber: year,
+        id: year,
         startDate: dob.add(Duration(days: year * Constants.daysInYear)),
         endDate: dob.add(Duration(days: (year + 1) * Constants.daysInYear - 1)),
         boxStatus: BoxStatus.unknown,
@@ -62,7 +67,7 @@ class HomeService {
         final weekEndDay = (week + 1) * Constants.daysInWeek - 1;
 
         weekBoxList.add(WeekBox(
-          boxNumber: week,
+          id: week,
           startDate: dob.add(Duration(days: weekStartDay)),
           endDate: dob.add(Duration(days: weekEndDay)),
           boxStatus: BoxStatus.unknown,
@@ -74,7 +79,7 @@ class HomeService {
             day++) {
           dayBoxList.add(
             DayBox(
-              boxNumber: day,
+              id: day,
               date: dob.add(Duration(days: day)),
               boxStatus: BoxStatus.unknown,
               weekNumber: week,
@@ -89,4 +94,10 @@ class HomeService {
 }
 
 @riverpod
-HomeService homeService(Ref ref) => HomeService(ref, ref.watch(dbProvider));
+HomeService homeService(Ref ref) => HomeService(
+      db: ref.watch(dbProvider),
+      dayBoxRepository: ref.watch(dayBoxRepositoryProvider),
+      weekBoxRepository: ref.watch(weekBoxRepositoryProvider),
+      yearBoxRepository: ref.watch(yearBoxRepositoryProvider),
+      setupRepository: ref.watch(setupRepositoryProvider),
+    );

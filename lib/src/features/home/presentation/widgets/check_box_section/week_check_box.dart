@@ -26,11 +26,11 @@ class WeekCheckBox extends ConsumerWidget {
     return StatusCheckBox(
       heroTag: weekBox.chatGroupId,
       status: weekBox.boxStatus,
-      highlight: current == weekBox.boxNumber || weekBox.hasLandMark,
-      isCurrent: current == weekBox.boxNumber,
+      highlight: current == weekBox.id || weekBox.hasLandMark,
+      isCurrent: current == weekBox.id,
       isPast: weekBox.endDate.isBefore(DateTime.now()),
-      tooltip: (weekBox.boxNumber + 1).formatNumber(),
-      onTap: () => WeekChatRoute(weekBox.boxNumber).go(context),
+      tooltip: (weekBox.id + 1).formatNumber(),
+      onTap: () => WeekChatRoute(weekBox.id).go(context),
       onLongPress: () => ref
           .read(weekBoxRepositoryProvider)
           .save(weekBox.copyWith(boxStatus: weekBox.boxStatus.getNextState())),

@@ -7,7 +7,7 @@ part of 'box.dart';
 // **************************************************************************
 
 _$DayBoxImpl _$$DayBoxImplFromJson(Map<String, dynamic> json) => _$DayBoxImpl(
-      boxNumber: (json['boxNumber'] as num).toInt(),
+      id: (json['boxNumber'] as num).toInt(),
       date: const EpochDateTimeConverter()
           .fromJson((json['date'] as num).toInt()),
       boxStatus: $enumDecode(_$BoxStatusEnumMap, json['boxStatus']),
@@ -18,7 +18,7 @@ _$DayBoxImpl _$$DayBoxImplFromJson(Map<String, dynamic> json) => _$DayBoxImpl(
 
 Map<String, dynamic> _$$DayBoxImplToJson(_$DayBoxImpl instance) =>
     <String, dynamic>{
-      'boxNumber': instance.boxNumber,
+      'boxNumber': instance.id,
       'date': const EpochDateTimeConverter().toJson(instance.date),
       'boxStatus': _$BoxStatusEnumMap[instance.boxStatus]!,
       'weekNumber': instance.weekNumber,
@@ -38,7 +38,7 @@ const _$BoxStatusEnumMap = {
 
 _$WeekBoxImpl _$$WeekBoxImplFromJson(Map<String, dynamic> json) =>
     _$WeekBoxImpl(
-      boxNumber: (json['boxNumber'] as num).toInt(),
+      id: (json['boxNumber'] as num).toInt(),
       startDate: const EpochDateTimeConverter()
           .fromJson((json['startDate'] as num).toInt()),
       endDate: const EpochDateTimeConverter()
@@ -50,7 +50,7 @@ _$WeekBoxImpl _$$WeekBoxImplFromJson(Map<String, dynamic> json) =>
 
 Map<String, dynamic> _$$WeekBoxImplToJson(_$WeekBoxImpl instance) =>
     <String, dynamic>{
-      'boxNumber': instance.boxNumber,
+      'boxNumber': instance.id,
       'startDate': const EpochDateTimeConverter().toJson(instance.startDate),
       'endDate': const EpochDateTimeConverter().toJson(instance.endDate),
       'boxStatus': _$BoxStatusEnumMap[instance.boxStatus]!,
@@ -60,7 +60,7 @@ Map<String, dynamic> _$$WeekBoxImplToJson(_$WeekBoxImpl instance) =>
 
 _$YearBoxImpl _$$YearBoxImplFromJson(Map<String, dynamic> json) =>
     _$YearBoxImpl(
-      boxNumber: (json['boxNumber'] as num).toInt(),
+      id: (json['boxNumber'] as num).toInt(),
       startDate: const EpochDateTimeConverter()
           .fromJson((json['startDate'] as num).toInt()),
       endDate: const EpochDateTimeConverter()
@@ -71,7 +71,7 @@ _$YearBoxImpl _$$YearBoxImplFromJson(Map<String, dynamic> json) =>
 
 Map<String, dynamic> _$$YearBoxImplToJson(_$YearBoxImpl instance) =>
     <String, dynamic>{
-      'boxNumber': instance.boxNumber,
+      'boxNumber': instance.id,
       'startDate': const EpochDateTimeConverter().toJson(instance.startDate),
       'endDate': const EpochDateTimeConverter().toJson(instance.endDate),
       'boxStatus': _$BoxStatusEnumMap[instance.boxStatus]!,

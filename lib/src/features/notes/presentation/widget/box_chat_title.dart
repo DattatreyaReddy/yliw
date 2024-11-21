@@ -51,7 +51,7 @@ class _DayBoxChatTitle extends ConsumerWidget {
             .save(box.copyWith(hasLandMark: value)),
       ),
       title: Text(
-        context.l10n.dayN((box.boxNumber + 1).formatNumber()!),
+        context.l10n.dayN((box.id + 1).formatNumber()!),
         style: TextStyle(fontWeight: FontWeight.w600),
       ),
       subtitle: Text(box.date.toDateString),
@@ -75,7 +75,7 @@ class _WeekBoxChatTitle extends ConsumerWidget {
             .save(box.copyWith(hasLandMark: value)),
       ),
       title: Text(
-        context.l10n.weekN((box.boxNumber + 1).formatNumber()!),
+        context.l10n.weekN((box.id + 1).formatNumber()!),
         style: TextStyle(fontWeight: FontWeight.w600),
       ),
       subtitle: Text(AppUtils.formatDates(box.startDate, box.endDate)),
@@ -99,7 +99,7 @@ class _YearBoxChatTitle extends ConsumerWidget {
             .save(box.copyWith(hasLandMark: value)),
       ),
       title: Text(
-        context.l10n.yearN((box.boxNumber + 1).formatNumber()!),
+        context.l10n.yearN((box.id + 1).formatNumber()!),
         style: TextStyle(fontWeight: FontWeight.w600),
       ),
       subtitle: Text(AppUtils.formatDates(box.startDate, box.endDate)),
