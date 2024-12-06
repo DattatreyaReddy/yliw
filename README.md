@@ -107,6 +107,14 @@ You can install Flutter & Dart from [Official website](https://docs.flutter.dev/
 ```
   $ flutter pub get
 ```
+3.  Localization generator
+```
+  $ flutter gen-l10n
+```
+3.  Build Runner Files Generator
+```
+  $ dart run build_runner build
+```
 
 3.  Now enter the following command to start debugging the app:
 
@@ -114,10 +122,6 @@ You can install Flutter & Dart from [Official website](https://docs.flutter.dev/
   $ flutter run
 ```
 
--  Localization generator
-```
-  $ flutter gen-l10n
-```
 
 - Pull-Request Suggestion
   - Install GitHooks after cloning the repo using `git config --local core.hooksPath .githooks`
