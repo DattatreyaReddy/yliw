@@ -111,12 +111,12 @@ You can install Flutter & Dart from [Official website](https://docs.flutter.dev/
 ```
   $ flutter gen-l10n
 ```
-3.  Build Runner Files Generator
+4.  Build Runner Files Generator
 ```
   $ dart run build_runner build
 ```
 
-3.  Now enter the following command to start debugging the app:
+5.  Now enter the following command to start debugging the app:
 
 ```
   $ flutter run
