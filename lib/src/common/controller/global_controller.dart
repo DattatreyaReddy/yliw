@@ -15,7 +15,7 @@ part 'global_controller.g.dart';
 Database db(Ref ref) => throw UnimplementedError("");
 
 @riverpod
-PackageInfo packageInfo(ref) => throw UnimplementedError();
+PackageInfo packageInfo(Ref ref) => throw UnimplementedError();
 
 @Riverpod(keepAlive: true)
 class AppUpdateCheck extends _$AppUpdateCheck {
